@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        let shool = {
+            shoolname : '大肥羊学校',
+            shooldizhi : '青青草原',
+            classes:[{
+                        classname:'大肥羊小班',
+                        teacher:'慢羊羊',
+                        students:['懒羊羊','沸羊羊','小刀羊']
+                    },
+                    {
+                        classname:'大肥羊中班',
+                        teacher:'软绵绵',
+                        students:['美羊羊','丽羊羊','小灰灰']
+                    },
+                    {
+                        classname:'大肥羊大班',
+                        teacher:'智羊羊',
+                        students:['喜羊羊','机械羊','暖羊羊']
+                    }]
+        }
+
+        function cha(name){
+            var ff = 0;
+            for(i in shool.classes){
+                
+            if(shool.classes[i].students.indexOf(name)!==-1){
+                ff =1;
+                alert( `
+                姓名：${name}
+                学校：${shool.shoolname}
+                地点：${shool.shooldizhi}
+                班级：${shool.classes[i].classname}
+                老师：${shool.classes[i].teacher}
+                `)
+            }
+        }
+        if(ff==0){
+            alert('没有这只羊')
+            }
+        }
+        do{
+        let a = prompt(`欢迎来到大肥羊学校
+        输入你要找的羊`);
+        let b = cha(a); 
+        }while(confirm('你要继续吗'))
+    </script>
+</body>
+</html>
